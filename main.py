@@ -1,12 +1,24 @@
+from turtle import *
+
+anglelist = [10,30,60,90,135]
+
+print("\
+1) 10 degrees\n\
+2) 30 degrees\n\
+3) 60 degrees\n\
+4) 90 degrees\n\
+5) 135 degrees")
 while True:
-    angle = input("Enter angle(10-170): ")
-    try:
-        angle = float(angle)
-        if angle < 10 or angle >170:
-            raise ValueError
-        break
-    except ValueError:
-        print("Invalid")
+  choice = input("Enter choice: ")
+  try:
+    choice = int(choice)
+    if choice not in range(1, 6):
+      raise ValueError
+    break
+  except ValueError:
+    print("Error")
+
+angle = anglelist[choice-1]
 
 left(90)
 penup()
